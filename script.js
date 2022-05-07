@@ -75,3 +75,10 @@ function spaceAge (planet, seconds) {
     return Number((seconds/earthYear/planets[planet])).toFixed(2);
 }
 console.log(spaceAge("Earth", 1000000000));
+
+/* Two Fer
+Two-fer or 2-fer is short for two for one. One for you and one for me.
+Given a name, return a string with the message:
+One for name, one for me.*/ 
+const twoFer = (string) => "One for " + `${string},` + " one for me";
+console.log(twoFer("Zaphod"));
