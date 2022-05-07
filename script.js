@@ -17,4 +17,16 @@ Syntax:
 g	Perform a global match (find all matches rather than stopping after the first match)
 i	Perform case-insensitive matching
 m	Perform multiline matching
+[abc]	Find any character between the brackets
+[^abc]	Find any character NOT between the brackets
+[0-9]	Find any character between the brackets (any digit)
+[^0-9]	Find any character NOT between the brackets (any non-digit)
+(x|y)	Find any of the alternatives specified
 */
+function regExTest (string) {
+    let regex = /[q]/g;
+    const myArray = string.match(regex);
+    return myArray.length;
+}
+console.log(regExTest('The quick brown fox jumps over the lazy dog.')); //true
+console.log(regExTest('The quick qrown fox qumps over the qazy dog.')); //true
