@@ -107,3 +107,49 @@ function robotName () {
     return robotName;
 }
 console.log(robotName());
+
+/* List Ops
+Implement basic list operations. 
+- append (given two lists, add all items in the second list 
+to the end of the first list);
+- concatenate (given a series of lists, 
+combine all items in all lists into one flattened list);
+*/
+//append
+let list1 = [1, 2, 3];
+let list2 = [4, 5, 6];
+list1.push(list2);
+// concatenate 
+let arr1 = [11,12,13];
+let arr2 = [14,15,16];
+let arr3 = [17,18,19];
+let newArr = arr1.concat(arr2, arr3);
+console.log(newArr); // 11, 12, 13, 14, 15, 16, 17, 18, 19
+// filter
+var greaterThanSeven = newArr.filter(function(number) {
+    return number > 15;
+});
+console.log(greaterThanSeven); //[ 16, 17, 18, 19 ]
+// length
+const lengthOfArr = (array) => array.length;
+console.log(lengthOfArr(newArr)); // 9
+/* map
+w3Schools:
+map() creates a new array from calling a function for every array element.
+map() calls a function once for each element in an array.
+map() does not execute the function for empty elements.
+map() does not change the original array.
+*/
+const numbers = [65, 44, 12, 4];
+const newArray = numbers.map(myFunction)
+function myFunction(num) {
+  return num * 10;
+}
+console.log(newArray); //[ 650, 440, 120, 40 ]
+
+const letter = ["w", "b", "fre", "b"];
+const newLetterArr = letter.map(addToLetter)
+function addToLetter (letter) {
+    return letter + "e";
+}
+console.log(newLetterArr); //[ 'we', 'be', 'free', 'be' ]
