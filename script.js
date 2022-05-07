@@ -82,3 +82,28 @@ Given a name, return a string with the message:
 One for name, one for me.*/ 
 const twoFer = (string) => "One for " + `${string},` + " one for me";
 console.log(twoFer("Zaphod"));
+
+/* Robot Name
+Manage robot factory settings.
+When a robot comes off the factory floor, it has no name.
+The first time you turn on a robot, a random name is generated in the format 
+of two uppercase letters followed by three digits, such as RX837 or BC811. */ 
+function robotName () {
+    let robotName = [];
+    let randomNum = 0;
+    const alphabet = "ABCDEFGHIJKLIMNOPQRSTVWXYZ";
+
+    for(let i = 0; i < 2; i++) {
+        const randomCharacter = alphabet[Math.floor(Math.random() * alphabet.length)];
+        robotName[i] = randomCharacter;
+    }
+    for(let i = 0; i < 3; i++) {
+        let index = 2;
+        randomNum = Math.floor(Math.random() * 10);
+        robotName[i + index] = randomNum;
+        index ++;
+    }
+    robotName = robotName.join("");
+    return robotName;
+}
+console.log(robotName());
