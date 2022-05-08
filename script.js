@@ -192,3 +192,24 @@ function score (string) {
 }
 console.log(score("cabbage"));
 //console.log(score("B"));
+
+
+/* Given students' names along with the grade that they are in, 
+create a roster for the school. */
+let students = {
+    A: [], 
+    B: [],
+};
+function addStudent (grade, string) {
+    students[`${grade}`].push(`${string}`);
+    return students;
+}
+function getStudents () {
+    const myJSON = JSON.stringify(students);
+    return myJSON;
+} 
+
+console.log(addStudent("A", "Mandalorian"));
+console.log(addStudent("A", "Grogu"));
+console.log(addStudent("B", "Jedi"));
+console.log(getStudents());
