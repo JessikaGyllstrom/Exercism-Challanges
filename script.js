@@ -146,10 +146,16 @@ function myFunction(num) {
   return num * 10;
 }
 console.log(newArray); //[ 650, 440, 120, 40 ]
-
 const letter = ["w", "b", "fre", "b"];
 const newLetterArr = letter.map(addToLetter)
 function addToLetter (letter) {
     return letter + "e";
 }
 console.log(newLetterArr); //[ 'we', 'be', 'free', 'be' ]
+
+let nums = [1, 2, 3];
+let sum = nums.reduce(function (previousValue, currentValue) {
+    return previousValue + currentValue;
+});
+
+console.log(sum);
