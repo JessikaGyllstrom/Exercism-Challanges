@@ -152,10 +152,43 @@ function addToLetter (letter) {
     return letter + "e";
 }
 console.log(newLetterArr); //[ 'we', 'be', 'free', 'be' ]
-
+/* dev moz:
+The reduce() method executes a user-supplied "reducer" callback function 
+on each element of the array, in order, passing in the return value from 
+the calculation on the preceding element. 
+The final result of running the reducer across all elements of the array is 
+a single value.
+The first time that the callback is run there is no "return value of the 
+previous calculation". If supplied, an initial value may be used in its place. 
+Otherwise the array element at index 0 is used as the initial value and iteration 
+starts from the next element (index 1 instead of index 0).*/
 let nums = [1, 2, 3];
 let sum = nums.reduce(function (previousValue, currentValue) {
     return previousValue + currentValue;
 });
-
 console.log(sum);
+//reverse 
+let newAr = nums.reverse();
+console.log(nums); //[ 3, 2, 1 ]
+
+// Given a word, compute the Scrabble score for that word.
+const scoreTable = {
+      a: 1, e: 1, i: 1, o: 1, u: 1, l: 1, n: 1, r: 1, s: 1, t: 1,
+      d: 2, g: 2,
+      b: 3, c: 3, m: 3, p: 3,
+      f: 4, h: 4, v: 4, w: 4, y: 4,
+      k: 5,
+      j: 8, x: 8,
+      q: 10, z: 10
+};
+function score (string) {
+    let total = 0;
+    string = string.toLowerCase();
+    for(let ch of string) {
+        console.log(scoreTable[ch]);
+        total += scoreTable[ch];
+    }
+    return total;   
+}
+console.log(score("cabbage"));
+//console.log(score("B"));
